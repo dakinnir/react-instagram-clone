@@ -3,7 +3,8 @@ import React, { useState } from "react";
 import "./css/Home.styles.css";
 import Post from "../component/Post";
 import AppNameLogo from "../component/AppNameLogo";
-import InstagramEmbed from 'react-instagram-embed'
+import InstagramEmbed from "react-instagram-embed";
+import { AiOutlinePlus } from "react-icons/ai";
 
 const Home = () => {
   const [posts, setPosts] = useState([
@@ -30,8 +31,11 @@ const Home = () => {
   return (
     <div className='home__container'>
       <div className='home__header'>
-        <AppNameLogo height='50px' />
-        <input type='text' placeholder='Search' />
+        <AppNameLogo height='45px' />
+        <div style={{display: "flex", alignItems: "center", gap: '10px'}}>
+          <input type='text' placeholder='Search' />
+          <button className='post__btn'><AiOutlinePlus /></button>
+        </div>
       </div>
       <div className='home__posts'>
         {posts.map((post, i) => {

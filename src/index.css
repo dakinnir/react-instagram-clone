@@ -15,3 +15,16 @@ code {
 a {
   text-decoration: none;
 }
+
+.mb__10 {
+  margin-bottom: 10px;
+}
+
+.gap__10 {
+  gap: 10px;
+}
+
+.semibold {
+  font-weight: 500;
+}
+

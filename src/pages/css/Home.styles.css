@@ -9,7 +9,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
+  padding: 7px 40px;
   background-color: black;
 }
 
@@ -28,4 +28,18 @@
   height: fit-content;
   font-size: 0.9rem;
   outline: none;
+}
+
+.post__btn {
+  padding-top: 5px;
+  border-radius: 5px;
+  border: none;
+  background-color: white;
+  font-size: large;
+}
+
+.post__btn:hover {
+  color: black;
+  background-color: #f6f6f6;
+  cursor: pointer;
 }
