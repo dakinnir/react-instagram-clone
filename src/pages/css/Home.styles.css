@@ -1,0 +1,31 @@
+.home__container {
+  background-color: black;
+  color: white;
+}
+
+.home__header {
+  position: sticky;
+  top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: black;
+}
+
+.home__posts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home__header input {
+  background-color: rgb(75, 75, 75);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 7px 10px;
+  height: fit-content;
+  font-size: 0.9rem;
+  outline: none;
+}
