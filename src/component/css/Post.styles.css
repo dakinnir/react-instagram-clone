@@ -1,0 +1,24 @@
+.post__container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 5px;
+  border-bottom: 0.5px solid rgb(45, 45, 45);
+  padding-bottom: 40px;
+  width: 470px;
+}
+
+.post__image {
+  object-fit: contain;
+  width: 100%;
+  border: 1px solid rgb(45, 45, 45);
+  border-radius: 2px;
+}
+
+.post__container .caption {
+  padding-top: 10px;
+}
+
+.semibold {
+  font-weight: 700;
+}

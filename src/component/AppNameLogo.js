@@ -1,14 +1,18 @@
 import React from "react";
+import "./css/AppNameLogo.css";
 
-const AppNameLogo = () => {
+const AppNameLogo = ({ height, image }) => {
   return (
-    <div className='auth__formLogoContainer'>
-      <img
-        className='auth__formLogo '
-        src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png'
-        alt=''
-      />
-    </div>
+    <img
+      style={{ height: height }}
+      className='auth__formLogo'
+      src={
+        image !== undefined
+          ? image
+          : "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Instagram_logo.svg/2560px-Instagram_logo.svg.png"
+      }
+      alt='Instagram Clone'
+    />
   );
 };
 
