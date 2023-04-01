@@ -1,15 +1,35 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+
 import AppNameLogo from "../component/AppNameLogo";
 import AuthOption from "../component/AuthOption";
 import "./css/Auth.styles.css";
+import { useAuth } from "../hooks/context/UserContext";
 
 const SignIn = () => {
+  const { user, login } = useAuth();
+  const [state, setState] = useState({
+    email: "",
+    password: "",
+  });
+
   const navigate = useNavigate();
 
-  const submitFormHandler = (event) => {
+  console.log(user);
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    navigate("/home");
+    await login(state.email, state.password)
+    .then(() => {
+      navigate("/");
+    })
+    .catch((err) => {
+      alert(err.message);
+    });
+  };
+
+  const onInputChangeHandler = (event) => {
+    const { name, value } = event.target;
+    setState({ ...state, [name]: value });
   };
 
   return (
@@ -24,21 +44,25 @@ const SignIn = () => {
         <div className='auth__pageForm padded__border'>
           {/* Form submission */}
           <div className='auth__form'>
-            <form action='' onSubmit={submitFormHandler}>
+            <form action='' onSubmit={handleSubmit}>
               {/* Instagram logo */}
-              <div className='auth__formLogoContainer'>
+              <div className='center'>
                 <AppNameLogo height='65px' />
               </div>
               <div className='auth__formControls'>
                 <input
                   className='auth__formInput'
                   type='text'
+                  name='email'
                   placeholder='Phone number, username or email'
+                  onChange={onInputChangeHandler}
                 />
                 <input
                   className='auth__formInput'
                   type='password'
+                  name='password'
                   placeholder='Password'
+                  onChange={onInputChangeHandler}
                 />
                 <button type='submit'>Log in</button>
                 <Link to='/forgot-password'>Forgot password?</Link>

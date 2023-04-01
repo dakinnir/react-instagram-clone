@@ -11,7 +11,7 @@ const AvatarHeader = ({ username }) => {
       }}
     >
       <Avatar alt={username}>{username.charAt(0).toUpperCase()}</Avatar>
-      <p>{username}</p>
+      <p style={{fontWeight: "800"}}>{username}</p>
     </div>
   );
 };

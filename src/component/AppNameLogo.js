@@ -5,7 +5,7 @@ const AppNameLogo = ({ height, image }) => {
   return (
     <img
       style={{ height: height }}
-      className='auth__formLogo'
+      className='app__name'
       src={
         image !== undefined
           ? image

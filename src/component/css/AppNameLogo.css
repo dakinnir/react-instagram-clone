@@ -1,5 +1,5 @@
-.app__nameLogoContainer {
-  display: flex;
-  justify-content: center;
-  margin: 35px 0;
+.app__name {
+  object-fit: contain;
+  padding: 20px 10px;
+  box-sizing: content-box;
 }
